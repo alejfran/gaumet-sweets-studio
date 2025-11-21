@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -60,8 +61,8 @@ export default {
         },
       },
       fontFamily: {
-        heading: ["Playfair Display", "serif"],
-        body: ["Inter", "sans-serif"],
+        heading: ["Bricolage Grotesque", "sans-serif"],
+        body: ["Bricolage Grotesque", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -92,5 +93,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

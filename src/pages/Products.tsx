@@ -1,38 +1,42 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import cookiesImage from "@/assets/cookies-hero.jpg";
-import browniesImage from "@/assets/brownies-hero.jpg";
-import rollsImage from "@/assets/rolls-hero.jpg";
-import cheesecakeImage from "@/assets/cheesecake-hero.jpg";
+import cookiesImage from "@/assets/cookies.png";
+import browniesImage from "@/assets/Dubai 1-2.png";
+import rollsImage from "@/assets/rolls-hero.png";
+import cheesecakeImage from "@/assets/cheesecake.png";
 
 const Products = () => {
   const categories = [
     {
       id: "cookies",
       name: "Cookies estilo NY",
-      description: "Nuestro producto estrella. Gruesas, crujientes por fuera y suaves por dentro. Disponibles en múltiples sabores.",
+      description:
+        "Nuestro producto estrella. Gruesas, crujientes por fuera y suaves por dentro. Disponibles en múltiples sabores.",
       image: cookiesImage,
       itemCount: 4,
     },
     {
       id: "brownies",
       name: "Brownies",
-      description: "Intensos, chocolateados y con el toque perfecto de dulzura. Elige entre clásico, con nueces o cheesecake.",
+      description:
+        "Intensos, chocolateados y con el toque perfecto de dulzura. Elige entre clásico, con nueces o cheesecake.",
       image: browniesImage,
       itemCount: 3,
     },
     {
       id: "rolls",
       name: "Rolls de Canela",
-      description: "Esponjosos, con el aroma de la canela recién horneada y cobertura cremosa de queso.",
+      description:
+        "Esponjosos, con el aroma de la canela recién horneada y cobertura cremosa de queso.",
       image: rollsImage,
       itemCount: 2,
     },
     {
       id: "tartas",
       name: "Tartas de Queso",
-      description: "Suaves, ligeras y con una base de galleta irresistible. Perfectas para compartir o llevar entera.",
+      description:
+        "Suaves, ligeras y con una base de galleta irresistible. Perfectas para compartir o llevar entera.",
       image: cheesecakeImage,
       itemCount: 3,
     },
@@ -52,7 +56,10 @@ const Products = () => {
           </p>
           <div className="pt-4">
             <p className="text-sm text-muted-foreground">
-              También disponible: <span className="font-semibold text-foreground">opciones veganas y sin azúcar</span>
+              También disponible:{" "}
+              <span className="font-semibold text-foreground">
+                opciones veganas y sin azúcar
+              </span>
             </p>
           </div>
         </div>
@@ -89,7 +96,8 @@ const Products = () => {
                     {category.description}
                   </p>
                   <div className="flex items-center text-primary font-semibold pt-2">
-                    Ver productos <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                    Ver productos{" "}
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </CardContent>
               </Card>
@@ -105,9 +113,9 @@ const Products = () => {
             ¿Opciones Especiales?
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Sabemos que cada persona es única, por eso ofrecemos versiones veganas
-            y sin azúcar de nuestros productos más populares. Pregúntanos por
-            disponibilidad y encargos especiales.
+            Sabemos que cada persona es única, por eso ofrecemos versiones
+            veganas y sin azúcar de nuestros productos más populares.
+            Pregúntanos por disponibilidad y encargos especiales.
           </p>
           <div className="pt-4">
             <a

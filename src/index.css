@@ -19,7 +19,7 @@ All colors MUST be HSL.
     --popover-foreground: 30 15% 25%;
 
     /* Warm brown for primary actions */
-    --primary: 30 45% 45%;
+    --primary: 30 45% 20%;
     --primary-foreground: 40 60% 98%;
 
     /* Soft pastel pink for secondary */
@@ -31,7 +31,7 @@ All colors MUST be HSL.
     --muted-foreground: 30 10% 50%;
 
     /* Soft yellow accent (logo color) */
-    --accent: 45 90% 70%;
+    --accent: 48 98% 53%;
     --accent-foreground: 30 15% 25%;
 
     --destructive: 0 70% 60%;

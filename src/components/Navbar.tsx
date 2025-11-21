@@ -3,6 +3,7 @@ import { NavLink } from "./NavLink";
 import { Menu, X, Cookie } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,19 +17,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed py-4 top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-soft-yellow flex items-center justify-center transition-transform group-hover:scale-110">
-              <Cookie className="w-6 h-6 text-warm-brown" />
+            <div className="w-20 h-20 p-3 mr-2 rounded-full bg-accent flex items-center justify-center transition-transform group-hover:scale-110">
+              <img src={logo} alt="logo" className="w-auto h-auto" />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading text-xl font-semibold text-foreground">
+              <span className="font-heading text-4xl font-medium text-foreground">
                 Pastelería Gaumet
               </span>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">
+              <span className="text-xs ml-0.5 text-muted-foreground uppercase tracking-wider">
                 Momentos Dulces
               </span>
             </div>
@@ -40,10 +41,11 @@ const Navbar = () => {
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="text-foreground/70 hover:text-foreground transition-colors font-medium"
+                className="relative text-foreground/70 hover:text-foreground transition-colors font-medium group"
                 activeClassName="text-primary font-semibold"
               >
                 {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground transition-all duration-300 ease-out group-hover:w-full"></span>
               </NavLink>
             ))}
           </div>
