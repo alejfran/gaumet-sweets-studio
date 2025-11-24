@@ -2,14 +2,19 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, CheckCircle2, MessageCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle2, MessageCircle, ShoppingCart, Minus, Plus } from "lucide-react";
 import { getProductById } from "@/data/products";
 import { useState } from "react";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 const ProductDetail = () => {
   const { category, id } = useParams<{ category: string; id: string }>();
   const product = getProductById(id || "");
   const [selectedImage, setSelectedImage] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+  const { toast } = useToast();
 
   if (!product) {
     return (
@@ -29,6 +34,15 @@ const ProductDetail = () => {
   const whatsappMessage = encodeURIComponent(
     `Hola! Me interesa ${product.name}. ¿Está disponible?`
   );
+
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+    toast({
+      title: "¡Agregado al carrito!",
+      description: `${quantity} x ${product.name}`,
+    });
+    setQuantity(1);
+  };
 
   return (
     <div className="min-h-screen">
@@ -127,12 +141,48 @@ const ProductDetail = () => {
               </ul>
             </Card>
 
+            {/* Quantity Selector */}
+            <Card className="p-6">
+              <h3 className="font-heading text-lg font-semibold mb-4">Cantidad</h3>
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-12 w-12"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                >
+                  <Minus className="h-5 w-5" />
+                </Button>
+                <span className="text-2xl font-semibold w-16 text-center">
+                  {quantity}
+                </span>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-12 w-12"
+                  onClick={() => setQuantity(quantity + 1)}
+                >
+                  <Plus className="h-5 w-5" />
+                </Button>
+              </div>
+            </Card>
+
             {/* CTA Buttons */}
             <div className="space-y-3 pt-4">
               <Button
-                asChild
                 size="lg"
                 className="w-full bg-primary hover:bg-primary/90 text-lg h-14"
+                onClick={handleAddToCart}
+              >
+                <ShoppingCart className="mr-2 h-5 w-5" />
+                Agregar al Carrito
+              </Button>
+
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="w-full text-lg h-14"
               >
                 <a
                   href={`https://wa.me/34646951415?text=${whatsappMessage}`}

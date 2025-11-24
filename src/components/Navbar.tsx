@@ -4,6 +4,7 @@ import { Menu, X, Cookie } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import logo from "@/assets/logo.png";
+import { CartDrawer } from "./CartDrawer";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,6 +49,7 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground transition-all duration-300 ease-out group-hover:w-full"></span>
               </NavLink>
             ))}
+            <CartDrawer />
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,6 +78,9 @@ const Navbar = () => {
                   {link.label}
                 </NavLink>
               ))}
+              <div className="pt-4 border-t border-border">
+                <CartDrawer />
+              </div>
             </div>
           </div>
         )}
