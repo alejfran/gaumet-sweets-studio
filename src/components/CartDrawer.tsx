@@ -1,28 +1,44 @@
 import { Link } from "react-router-dom";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { ShoppingCart, Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { useNavbar } from "@/contexts/NavbarContext";
 
 export const CartDrawer = () => {
-  const { items, removeFromCart, updateQuantity, getTotalItems, getTotalPrice } = useCart();
+  const {
+    items,
+    removeFromCart,
+    updateQuantity,
+    getTotalItems,
+    getTotalPrice,
+  } = useCart();
+  const [open, setOpen] = useState(false);
+  const { setIsOpen: setNavbarOpen } = useNavbar();
 
   const formatPrice = (price: string) => {
-    const priceStr = price.split('€')[0].replace(',', '.');
-    return parseFloat(priceStr).toFixed(2).replace('.', ',');
+    const priceStr = price.split("€")[0].replace(",", ".");
+    return parseFloat(priceStr).toFixed(2).replace(".", ",");
   };
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon" className="relative">
           <ShoppingCart className="h-5 w-5" />
           {getTotalItems() > 0 && (
-            <Badge 
-              variant="secondary" 
+            <Badge
+              variant="secondary"
               className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center bg-primary text-primary-foreground"
             >
               {getTotalItems()}
@@ -63,7 +79,9 @@ export const CartDrawer = () => {
                     </div>
                     <div className="flex-1 space-y-2">
                       <div className="flex justify-between items-start">
-                        <h4 className="font-medium text-sm leading-tight">{item.name}</h4>
+                        <h4 className="font-medium text-sm leading-tight">
+                          {item.name}
+                        </h4>
                         <Button
                           variant="ghost"
                           size="icon"
@@ -79,7 +97,9 @@ export const CartDrawer = () => {
                             variant="outline"
                             size="icon"
                             className="h-7 w-7"
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity - 1)
+                            }
                           >
                             <Minus className="h-3 w-3" />
                           </Button>
@@ -90,7 +110,9 @@ export const CartDrawer = () => {
                             variant="outline"
                             size="icon"
                             className="h-7 w-7"
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity + 1)
+                            }
                           >
                             <Plus className="h-3 w-3" />
                           </Button>
@@ -109,17 +131,25 @@ export const CartDrawer = () => {
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span>{getTotalPrice().toFixed(2).replace('.', ',')}€</span>
+                  <span>{getTotalPrice().toFixed(2).replace(".", ",")}€</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between font-semibold text-lg">
                   <span>Total</span>
-                  <span className="text-primary">{getTotalPrice().toFixed(2).replace('.', ',')}€</span>
+                  <span className="text-primary">
+                    {getTotalPrice().toFixed(2).replace(".", ",")}€
+                  </span>
                 </div>
               </div>
 
               <Button asChild className="w-full h-12" size="lg">
-                <Link to="/checkout">
+                <Link
+                  to="/checkout"
+                  onClick={() => {
+                    setOpen(false);
+                    setNavbarOpen(false);
+                  }}
+                >
                   Proceder al Pago
                 </Link>
               </Button>

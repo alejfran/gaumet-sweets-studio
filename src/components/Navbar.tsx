@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { NavLink } from "./NavLink";
 import { Menu, X, Cookie } from "lucide-react";
-import { useState } from "react";
 import { Button } from "./ui/button";
 import logo from "@/assets/logo.png";
 import { CartDrawer } from "./CartDrawer";
+import { useNavbar } from "@/contexts/NavbarContext";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useNavbar();
 
   const navLinks = [
     { to: "/", label: "Inicio" },

@@ -366,14 +366,14 @@ const Home = () => {
                       className="flex items-center justify-between py-3 px-4 bg-accent/15 border-l-2 border-primary/50 hover:border-primary hover:cursor-pointer hover:bg-accent/40 transition-all duration-200"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="text-primary font-bold text-sm w-5">
+                        <span className="text-primary font-bold text-sm w-8">
                           {day}
                         </span>
                         <div className="flex items-center gap-2">
                           <div className="relative md:block hidden">
                             <div className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full animate-pulse"></div>
                           </div>
-                          <span className="text-xs text-primary/80 font-semibold tracking-wide">
+                          <span className="sm:block hidden text-xs text-primary/80 font-semibold tracking-wide">
                             {status}
                           </span>
                         </div>

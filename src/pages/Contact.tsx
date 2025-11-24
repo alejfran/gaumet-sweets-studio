@@ -18,7 +18,7 @@ const Contact = () => {
 
       {/* Contact Info */}
       <section className="py-8 md:py-16 container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 max-w-6xl mx-auto">
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="p-6 space-y-4 text-center">
               <div className="w-14 h-14 rounded-full bg-accent/100 flex items-center justify-center mx-auto">
@@ -186,7 +186,7 @@ const Contact = () => {
                           </span>
                           <div className="flex items-center gap-2">
                             <div className="md:block hidden w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                            <span className="text-xs text-primary/80 font-semibold tracking-wide mr-2">
+                            <span className="sm:block hidden text-xs text-primary/80 font-semibold tracking-wide mr-2">
                               {status}
                             </span>
                           </div>
@@ -235,11 +235,10 @@ const Contact = () => {
                   </p>
                 </div>
 
-                <div className="aspect-video rounded-xl overflow-hidden shadow-lg mb-6 flex-grow min-h-[300px]">
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg mb-6 relative w-full h-0 pb-[56.25%]">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.065748932577!2d-16.317920!3d28.487362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41ccf4f8b8a0e3%3A0x7e1e1e1e1e1e1e1e!2sC.%20Alfredo%20Torres%20Edwars%2C%206%2C%2038204%20San%20Crist%C3%B3bal%20de%20La%20Laguna%2C%20Santa%20Cruz%20de%20Tenerife!5e0!3m2!1ses!2ses!4v1234567890"
-                    width="100%"
-                    height="100%"
+                    className="absolute top-0 left-0 w-full h-full"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
