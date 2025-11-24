@@ -10,11 +10,10 @@ const Services = () => {
       title: "Bodas",
       description: "Tu día especial merece un pastel único y memorable",
       details: [
-        "Diseños personalizados según tu temática",
+        "Diseños personalizados",
         "Degustación de sabores previa",
         "Opciones para diferentes número de invitados",
         "Decoración elegante y profesional",
-        "Entrega y montaje en el lugar del evento",
       ],
       anticipation: "Solicitar con 2-3 semanas de anticipación",
     },
@@ -23,7 +22,7 @@ const Services = () => {
       title: "Cumpleaños",
       description: "Celebra con pasteles que sorprenden y enamoran",
       details: [
-        "Diseños temáticos personalizados",
+        "Diseños personalizados",
         "Adaptación a gustos y preferencias",
         "Opciones infantiles y para adultos",
         "Decoraciones creativas",
@@ -49,7 +48,7 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="py-20 gradient-warm">
+      <section className="pt-16 pb-12 sm:pt-16 sm:pb-16 md:py-20 gradient-warm">
         <div className="container mx-auto px-4 text-center space-y-4">
           <h1 className="font-heading text-5xl md:text-6xl font-bold">
             Servicios Especiales
@@ -62,7 +61,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 container mx-auto px-4">
+      <section className="py-12 md:py-20 container mx-auto px-4">
         <div className="space-y-12 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <Card
@@ -95,7 +94,9 @@ const Services = () => {
                       {service.details.map((detail, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">{detail}</span>
+                          <span className="text-muted-foreground">
+                            {detail}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -121,7 +122,7 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-12 md:py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 space-y-4">
@@ -143,9 +144,9 @@ const Services = () => {
                     Contacta con Nosotros
                   </h3>
                   <p className="text-muted-foreground">
-                    Escríbenos por WhatsApp o ven a visitarnos. Cuéntanos sobre tu
-                    evento, la fecha, número de personas y tus preferencias de sabor
-                    y diseño.
+                    Escríbenos por WhatsApp o ven a visitarnos. Cuéntanos sobre
+                    tu evento, la fecha, número de personas y tus preferencias
+                    de sabor y diseño.
                   </p>
                 </div>
               </div>
@@ -159,9 +160,7 @@ const Services = () => {
                     Diseño Personalizado
                   </h3>
                   <p className="text-muted-foreground">
-                    Trabajaremos juntos en el diseño perfecto. Te mostraremos opciones,
-                    colores, decoraciones y sabores. Si es necesario, programamos una
-                    degustación.
+                    Te mostraremos opciones, colores, decoraciones y sabores.
                   </p>
                 </div>
               </div>
@@ -175,8 +174,8 @@ const Services = () => {
                     Confirmación y Pago
                   </h3>
                   <p className="text-muted-foreground">
-                    Una vez acordado el diseño final, confirmamos fechas y realizas el
-                    pago. Te mantendremos informado durante todo el proceso de creación.
+                    Una vez acordado el diseño final, confirmamos fechas y
+                    realizas el pago.
                   </p>
                 </div>
               </div>
@@ -190,8 +189,7 @@ const Services = () => {
                     Recogida o Entrega
                   </h3>
                   <p className="text-muted-foreground">
-                    Recoge tu pastel en tienda o, para eventos grandes, coordinamos la
-                    entrega y montaje en el lugar. ¡Listo para sorprender!
+                    Recoge tu pastel en tienda. ¡Listo para sorprender!
                   </p>
                 </div>
               </div>
@@ -201,7 +199,7 @@ const Services = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-16 container mx-auto px-4">
+      <section className="py-12 md:py-20 container mx-auto px-4">
         <div className="max-w-3xl mx-auto space-y-8">
           <div className="text-center space-y-4">
             <h2 className="font-heading text-3xl md:text-4xl font-bold">
@@ -216,9 +214,8 @@ const Services = () => {
                   Recogida en Tienda
                 </h3>
                 <p className="text-muted-foreground">
-                  Todos nuestros productos regulares están disponibles para recogida
-                  en nuestra tienda de La Laguna. Horario: Lunes a viernes, 10:30–14:00
-                  y 17:00–20:00.
+                  Todos nuestros productos regulares están disponibles para
+                  recogida en nuestra tienda de La Laguna.
                 </p>
               </div>
 
@@ -227,8 +224,8 @@ const Services = () => {
                   Opciones Veganas y Sin Azúcar
                 </h3>
                 <p className="text-muted-foreground">
-                  Ofrecemos versiones veganas y sin azúcar de muchos de nuestros productos.
-                  Consulta disponibilidad por WhatsApp o en tienda.
+                  Ofrecemos versiones veganas y sin azúcar de muchos de nuestros
+                  productos. Consulta disponibilidad por WhatsApp o en tienda.
                 </p>
               </div>
 
@@ -237,8 +234,9 @@ const Services = () => {
                   Bandejas Surtidas
                 </h3>
                 <p className="text-muted-foreground">
-                  ¿No sabes qué elegir? Arma tu bandeja personalizada con una selección
-                  de cookies, brownies y otros productos. Perfectas para compartir o regalar.
+                  ¿No sabes qué elegir? Arma tu bandeja personalizada con una
+                  selección de cookies, brownies y otros productos. Perfectas
+                  para compartir o regalar.
                 </p>
               </div>
             </div>
@@ -247,7 +245,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 gradient-hero">
+      <section className="py-12 md:py-20 gradient-hero">
         <div className="container mx-auto px-4 text-center space-y-6">
           <h2 className="font-heading text-4xl md:text-5xl font-bold">
             ¿Listo para tu Pastel Perfecto?
@@ -257,7 +255,11 @@ const Services = () => {
             aquí para hacerlo inolvidable.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90"
+            >
               <a
                 href="https://wa.me/34646951415"
                 target="_blank"
@@ -267,9 +269,7 @@ const Services = () => {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link to="/contacto">
-                Ver información de contacto
-              </Link>
+              <Link to="/contacto">Ver información de contacto</Link>
             </Button>
           </div>
         </div>

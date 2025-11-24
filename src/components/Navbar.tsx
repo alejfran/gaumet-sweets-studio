@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed py-4 top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed py-4 top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -27,7 +27,7 @@ const Navbar = () => {
               <img src={logo} alt="logo" className="w-auto h-auto" />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading text-4xl font-medium text-foreground">
+              <span className="font-heading text-2xl sm:text-3xl md:text-4xl font-medium text-foreground">
                 Pastelería Gaumet
               </span>
               <span className="text-xs ml-0.5 text-muted-foreground uppercase tracking-wider">

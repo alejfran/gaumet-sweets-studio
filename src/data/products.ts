@@ -1,7 +1,7 @@
 export interface Product {
   id: string;
   name: string;
-  category: "cookies" | "brownies" | "rolls" | "tartas";
+  category: "cookies" | "brownies" | "rolls" | "cheesecake";
   description: string;
   longDescription: string;
   price: string;
@@ -19,7 +19,7 @@ export const products: Product[] = [
     description: "La cookie original estilo Nueva York. Crujiente por fuera, suave por dentro.",
     longDescription: "Nuestra cookie más icónica, inspirada en las legendarias cookies de Nueva York. Preparada con mantequilla de primera calidad, chispas de chocolate belga y un toque de sal marina que realza todos los sabores. El resultado es una cookie de tamaño generoso, con bordes crujientes y un centro suave e irresistible.",
     price: "3,50€",
-    images: ["/placeholder.svg"],
+    images: ["/src/assets/Dubai 1-2.png", "/src/assets/cookies.png", "/src/assets/cheesecake.png"],
     features: [
       "Tamaño XXL (120g)",
       "Chocolate belga 70%",
@@ -35,7 +35,7 @@ export const products: Product[] = [
     description: "Para los verdaderos amantes del chocolate. Intenso y adictivo.",
     longDescription: "Una explosión de chocolate en cada bocado. Masa de cacao premium con doble cantidad de chispas de chocolate negro y blanco. El equilibrio perfecto entre intensidad y dulzura.",
     price: "3,75€",
-    images: ["/placeholder.svg"],
+    images: ["/src/assets/rolls-hero.png"],
     features: [
       "Cacao premium",
       "Chispas negras y blancas",
@@ -51,7 +51,7 @@ export const products: Product[] = [
     description: "Rellena con Nutella original. Una delicia cremosa y chocolateada.",
     longDescription: "Nuestra cookie estrella con un corazón de Nutella que se derrite al morderla. La combinación perfecta de textura crujiente y cremosidad irresistible.",
     price: "4,00€",
-    images: ["/placeholder.svg"],
+    images: ["/src/assets/cookies.png"],
     features: [
       "Relleno generoso de Nutella",
       "Masa artesanal",
@@ -67,7 +67,7 @@ export const products: Product[] = [
     description: "Suave, aterciopelada, con chips de chocolate blanco.",
     longDescription: "Inspirada en el clásico pastel Red Velvet. Masa tierna de cacao rojo con chips de chocolate blanco y un toque de vainilla. Elegante y deliciosa.",
     price: "3,75€",
-    images: ["/placeholder.svg"],
+    images: ["/src/assets/cheesecake.png"],
     features: [
       "Color único",
       "Chocolate blanco",
@@ -161,11 +161,11 @@ export const products: Product[] = [
     available: true,
   },
 
-  // Tartas
+  // Cheesecake
   {
     id: "tarta-queso-clasica",
     name: "Tarta de Queso Clásica",
-    category: "tartas",
+    category: "cheesecake",
     description: "Cremosa, suave y perfectamente equilibrada.",
     longDescription: "La tarta de queso por excelencia. Preparada con queso crema de máxima calidad sobre una base crujiente de galleta. El equilibrio perfecto entre dulzor y acidez.",
     price: "24,00€ (entera) / 3,50€ (porción)",
@@ -181,7 +181,7 @@ export const products: Product[] = [
   {
     id: "tarta-queso-frutos-rojos",
     name: "Tarta de Queso con Frutos Rojos",
-    category: "tartas",
+    category: "cheesecake",
     description: "Nuestra tarta clásica coronada con mermelada de frutos del bosque.",
     longDescription: "La combinación perfecta de cremosidad y frescura. Nuestra tarta de queso clásica con una capa generosa de coulis de frutos rojos hechos en casa.",
     price: "26,00€ (entera) / 3,80€ (porción)",
@@ -197,7 +197,7 @@ export const products: Product[] = [
   {
     id: "tarta-queso-oreo",
     name: "Tarta de Queso Oreo",
-    category: "tartas",
+    category: "cheesecake",
     description: "Base de Oreo, relleno cremoso con trozos de galleta.",
     longDescription: "Una versión moderna y divertida. Base completa de Oreo, relleno cremoso con trozos generosos de galleta Oreo, y decoración espectacular. ¡Perfecta para los amantes de esta icónica galleta!",
     price: "26,00€ (entera) / 3,80€ (porción)",

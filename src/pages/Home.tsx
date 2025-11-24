@@ -3,66 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Heart, Award, Clock, PlaneIcon } from "lucide-react";
 import heroVideo from "@/assets/hero.mp4";
-import cookiesImage from "@/assets/cookies.png";
-import browniesImage from "@/assets/Dubai 1-2.png";
-import rollsImage from "@/assets/rolls-hero.png";
-import cheesecakeImage from "@/assets/cheesecake.png";
 import mural from "@/assets/mural.png";
-import wedding from "@/assets/Wedding.png";
-import custom from "@/assets/custom.png";
-import event from "@/assets/Events.png";
+import { categories } from "@/data/categories";
+import { services } from "@/data/services";
 
 const Home = () => {
-  const categories = [
-    {
-      name: "Cookies estilo NY",
-      description:
-        "Nuestro producto estrella. Gruesas, crujientes por fuera y suaves por dentro.",
-      image: cookiesImage,
-      link: "/productos/cookies",
-    },
-    {
-      name: "Brownies",
-      description:
-        "Intensos, chocolateados y con el toque perfecto de dulzura.",
-      image: browniesImage,
-      link: "/productos/brownies",
-    },
-    {
-      name: "Rolls de Canela",
-      description:
-        "Esponjosos, con el aroma de la canela recién horneada y cobertura cremosa.",
-      image: rollsImage,
-      link: "/productos/rolls",
-    },
-    {
-      name: "Tartas de Queso",
-      description: "Suaves, ligeras y con una base de galleta irresistible.",
-      image: cheesecakeImage,
-      link: "/productos/tartas",
-    },
-  ];
-
-  const services = [
-    {
-      icon: wedding,
-      title: "Bodas",
-      description:
-        "Endulza tu día especial con nuestras creaciones personalizadas.",
-    },
-    {
-      icon: custom,
-      title: "Encargos Personalizados",
-      description: "Danos una semana y creamos el pastel de tus sueños.",
-    },
-    {
-      icon: event,
-      title: "Eventos",
-      description:
-        "Pasteles únicos para cumpleaños, celebraciones y eventos corporativos.",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -82,18 +27,18 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl space-y-6 animate-fade-in">
-            <h1 className="font-heading text-5xl md:text-8xl font-black text-white grid gap-2">
+          <div className="max-w-2xl space-y-6 animate-fade-in md:text-left text-center">
+            <h1 className="font-heading text-6xl md:text-8xl font-black text-white grid gap-2">
               <span className="text-white">MOMENTOS DULCES</span>
               <span className="text-accent">Sabores Únicos</span>
             </h1>
-            <p className="text-2xl text-white/90 max-w-xl text-justify">
+            <p className="text-lg md:text-2xl text-white/90 max-w-xl md:text-left text-center">
               Pastelería artesanal en{" "}
               <span className="underline">San Cristóbal de La Laguna</span>.
               Cada día horneamos con amor y dedicación para crear experiencias
               inolvidables.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 md:justify-start justify-center">
               <Button
                 asChild
                 size="xl"
@@ -113,7 +58,7 @@ const Home = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 container mx-auto px-4">
+      <section className="md:py-32 py-16 container mx-auto px-4">
         <div className="text-center mb-12 space-y-4">
           <h2 className="font-heading text-4xl md:text-5xl font-bold">
             Productos destacados
@@ -124,7 +69,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 max-w-7xl mx-auto">
           {categories.map((category, index) => (
             <Link
               key={category.name}
@@ -132,8 +77,8 @@ const Home = () => {
               className="group animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                <div className="flex flex-col sm:flex-row h-auto sm:h-96">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
+                <div className="flex flex-col sm:flex-row flex-1">
                   {/* Image Container with Pattern Overlay */}
                   <div className="w-full sm:w-7/12 h-48 sm:h-full overflow-hidden relative">
                     <img
@@ -143,7 +88,7 @@ const Home = () => {
                     />
                     {/* Pattern SVG overlay on the right margin */}
                     <svg
-                      className="absolute top-0 right-0 h-full w-24 pointer-events-none"
+                      className="sm:visible invisible absolute top-0 right-0 h-full w-24 pointer-events-none"
                       viewBox="0 0 96 384"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +138,7 @@ const Home = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   {/* Content Container */}
-                  <div className="w-full sm:w-5/12 p-8 flex flex-col justify-between h-full relative overflow-hidden">
+                  <div className="w-full sm:w-5/12 p-8 flex flex-col justify-between relative overflow-hidden">
                     {/* Background decorative element */}
                     <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-accent/20 to-primary/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700" />
 
@@ -205,7 +150,7 @@ const Home = () => {
                         <h3 className="font-heading text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                           {category.name}
                         </h3>
-                        <p className="text-base text-muted-foreground leading-relaxed">
+                        <p className="hidden md:block text-base text-muted-foreground leading-relaxed">
                           {category.description}
                         </p>
                       </div>
@@ -213,7 +158,7 @@ const Home = () => {
 
                     {/* Bottom CTA section */}
                     <div className="space-y-4 relative z-10">
-                      <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent group-hover:via-primary/40 transition-colors duration-300" />
+                      <div className="w-full h-px bg-gradient-to-r md:my-0 mt-3 from-transparent via-primary/20 to-transparent group-hover:via-primary/40 transition-colors duration-300" />
 
                       <div className="flex items-end w-full justify-end">
                         <div className="flex items-center text-primary font-bold text-sm group-hover:translate-x-2 transition-transform duration-300 bg-primary/5 px-4 py-2 rounded-full group-hover:bg-primary/90 group-hover:text-white/90">
@@ -231,11 +176,11 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-32 bg-gradient-to-tr from-accent via-yellow-400 to-accent relative">
+      <section className="md:py-32 py-16 bg-gradient-to-tr from-accent via-yellow-400 to-accent relative">
         {/* Top circular wave border */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
-            className="w-full h-8 fill-white"
+            className="w-full h-8 fill-background"
             viewBox="0 0 1200 40"
             preserveAspectRatio="none"
           >
@@ -246,7 +191,7 @@ const Home = () => {
         {/* Bottom circular wave border */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           <svg
-            className="w-full h-8 fill-white"
+            className="w-full h-8 fill-background"
             viewBox="0 0 1200 40"
             preserveAspectRatio="none"
           >
@@ -259,7 +204,7 @@ const Home = () => {
             <h2 className="font-heading text-4xl md:text-5xl font-bold">
               Servicios Especiales
             </h2>
-            <p className="text-lg text-muted-foreground/90 max-w-2xl mx-auto">
+            <p className="text-lg text-primary/80 max-w-2xl mx-auto">
               Más que una pastelería, somos parte de tus momentos más
               importantes.
             </p>
@@ -293,7 +238,7 @@ const Home = () => {
             <Button asChild size="lg" className="group">
               <Link
                 to="/servicios"
-                className="flex items-center justify-center"
+                className="bg-primary hover:bg-primary/90 w-full max-w-md group flex items-center justify-center"
               >
                 Conoce todos nuestros servicios
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -304,7 +249,7 @@ const Home = () => {
       </section>
 
       {/* About Preview */}
-      <section className="py-32 container mx-auto px-4">
+      <section className="md:py-32 py-16 container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="font-heading text-4xl md:text-5xl font-bold">
             Pasión Artesanal
@@ -326,11 +271,11 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-accent relative">
+      <section className="md:py-32 py-16 bg-accent relative">
         {/* Top circular wave border */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
-            className="w-full h-8 fill-white"
+            className="w-full h-8 fill-background"
             viewBox="0 0 1200 40"
             preserveAspectRatio="none"
           >
@@ -421,17 +366,19 @@ const Home = () => {
                       className="flex items-center justify-between py-3 px-4 bg-accent/15 border-l-2 border-primary/50 hover:border-primary hover:cursor-pointer hover:bg-accent/40 transition-all duration-200"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="text-primary font-bold text-sm w-8">
+                        <span className="text-primary font-bold text-sm w-5">
                           {day}
                         </span>
                         <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                          <div className="relative md:block hidden">
+                            <div className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                          </div>
                           <span className="text-xs text-primary/80 font-semibold tracking-wide">
                             {status}
                           </span>
                         </div>
                       </div>
-                      <span className="text-primary/80 text-sm tracking-wider font-light">
+                      <span className="text-primary/80 text-xs md:text-sm tracking-wider font-light">
                         {hours}
                       </span>
                     </div>
@@ -457,7 +404,10 @@ const Home = () => {
                     ÚLTIMA ACTUALIZACIÓN:{" "}
                     {new Date().toLocaleDateString("es-ES")}
                   </span>
-                  <span className="tracking-wide">ESTADO: EN LÍNEA</span>
+                  <span className="tracking-wide text-xs flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    ESTADO: EN LÍNEA
+                  </span>
                 </div>
               </div>
             </div>

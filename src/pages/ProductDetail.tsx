@@ -2,7 +2,14 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, CheckCircle2, MessageCircle, ShoppingCart, Minus, Plus } from "lucide-react";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  MessageCircle,
+  ShoppingCart,
+  Minus,
+  Plus,
+} from "lucide-react";
 import { getProductById } from "@/data/products";
 import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
@@ -20,7 +27,9 @@ const ProductDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center space-y-4">
-          <h1 className="font-heading text-4xl font-bold">Producto no encontrado</h1>
+          <h1 className="font-heading text-4xl font-bold">
+            Producto no encontrado
+          </h1>
           <Button asChild>
             <Link to={`/productos/${category}`}>
               <ArrowLeft className="mr-2 h-4 w-4" /> Volver a {category}
@@ -50,11 +59,17 @@ const ProductDetail = () => {
       <section className="py-6 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link to="/productos" className="hover:text-primary transition-colors">
+            <Link
+              to="/productos"
+              className="hover:text-primary transition-colors"
+            >
               Productos
             </Link>
             <span>/</span>
-            <Link to={`/productos/${category}`} className="hover:text-primary transition-colors">
+            <Link
+              to={`/productos/${category}`}
+              className="hover:text-primary transition-colors"
+            >
               {category}
             </Link>
             <span>/</span>
@@ -65,7 +80,7 @@ const ProductDetail = () => {
 
       {/* Product Detail */}
       <section className="py-12 container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
           {/* Image Gallery */}
           <div className="space-y-4">
             {/* Thumbnails (vertical on left) */}
@@ -82,7 +97,7 @@ const ProductDetail = () => {
                     }`}
                   >
                     <img
-                      src={product.images[0]}
+                      src={product.images[index]}
                       alt={`${product.name} vista ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
@@ -93,7 +108,7 @@ const ProductDetail = () => {
               {/* Main Image */}
               <div className="flex-1 aspect-square rounded-2xl overflow-hidden bg-muted">
                 <img
-                  src={product.images[0]}
+                  src={product.images[selectedImage]}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
@@ -109,7 +124,10 @@ const ProductDetail = () => {
                   {product.name}
                 </h1>
                 {product.available && (
-                  <Badge variant="secondary" className="bg-green-100 text-green-800">
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-100 text-green-800"
+                  >
                     Disponible
                   </Badge>
                 )}
@@ -120,7 +138,9 @@ const ProductDetail = () => {
             </div>
 
             <div className="space-y-4">
-              <h2 className="font-heading text-xl font-semibold">Descripción</h2>
+              <h2 className="font-heading text-xl font-semibold">
+                Descripción
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
                 {product.longDescription}
               </p>
@@ -143,7 +163,9 @@ const ProductDetail = () => {
 
             {/* Quantity Selector */}
             <Card className="p-6">
-              <h3 className="font-heading text-lg font-semibold mb-4">Cantidad</h3>
+              <h3 className="font-heading text-lg font-semibold mb-4">
+                Cantidad
+              </h3>
               <div className="flex items-center gap-4">
                 <Button
                   variant="outline"
@@ -210,13 +232,16 @@ const ProductDetail = () => {
             {/* Additional Info */}
             <div className="pt-6 border-t border-border space-y-2 text-sm text-muted-foreground">
               <p>
-                💚 <span className="font-medium">Consulta</span> por opciones veganas y sin azúcar
+                <span className="font-medium">Consulta</span> por opciones
+                veganas y sin azúcar
               </p>
               <p>
-                🕐 <span className="font-medium">Horario:</span> Lun-Vie 10:30–14:00 y 17:00–20:00
+                <span className="font-medium">Horario:</span> Lun-Vie
+                10:30–14:00 y 17:00–20:00
               </p>
               <p>
-                📍 <span className="font-medium">Recogida en tienda:</span> C. Alfredo Torres Edwars, 6, La Laguna
+                <span className="font-medium">Recogida en tienda:</span> C.
+                Alfredo Torres Edwars, 6, La Laguna
               </p>
             </div>
           </div>
@@ -234,9 +259,7 @@ const ProductDetail = () => {
             Solicita el tuyo con una semana de anticipación.
           </p>
           <Button asChild size="lg" variant="outline">
-            <Link to="/servicios">
-              Ver servicios personalizados
-            </Link>
+            <Link to="/servicios">Ver servicios personalizados</Link>
           </Button>
         </div>
       </section>

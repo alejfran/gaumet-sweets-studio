@@ -74,7 +74,7 @@ const Footer = () => {
                   to="/productos/cookies"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Cookies estilo NY
+                  Galletas
                 </Link>
               </li>
               <li>
